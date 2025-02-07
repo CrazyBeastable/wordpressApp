@@ -111,28 +111,40 @@
                 <h2>Latest Posts</h2>
 
                 <!-- Loop through WordPress posts -->
-                <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
-                    <article class="post">
-                        <h3><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
-                        <p class="post-meta">Posted on <?php the_date(); ?> by <?php the_author(); ?></p>
-                        <p><?php the_excerpt(); ?></p>
-                        <a href="<?php the_permalink(); ?>">Read more</a>
-                    </article>
-                <?php endwhile; else: ?>
-                    <p>No posts found.</p>
-                <?php endif; ?>
+                <article class="post">
+                    <h3><a href="#">The Power of Artificial Intelligence in Education</a></h3>
+                    <p class="post-meta">Posted on February 7, 2025 by John Doe</p>
+                    <p>Artificial Intelligence (AI) has made its way into many industries, and education is no exception. AI can be used to personalize learning, provide real-time feedback, and create more engaging educational experiences...</p>
+                    <a href="#">Read more</a>
+                </article>
+
+                <article class="post">
+                    <h3><a href="#">How Machine Learning is Revolutionizing Healthcare</a></h3>
+                    <p class="post-meta">Posted on February 5, 2025 by Jane Smith</p>
+                    <p>Machine learning is transforming healthcare by enabling more accurate diagnoses, predicting disease outbreaks, and helping doctors with personalized treatment plans. Learn how ML algorithms are saving lives...</p>
+                    <a href="#">Read more</a>
+                </article>
+
+                <article class="post">
+                    <h3><a href="#">Understanding the Basics of Quantum Computing</a></h3>
+                    <p class="post-meta">Posted on January 30, 2025 by Alex Brown</p>
+                    <p>Quantum computing is still in its infancy, but it's already showing immense potential to change the way we solve complex problems. In this article, we break down the basics of quantum computing and its future applications...</p>
+                    <a href="#">Read more</a>
+                </article>
+
             </div>
 
             <!-- Sidebar -->
             <aside class="sidebar">
                 <h2>About</h2>
-                <p>Welcome to our educational blog. Stay tuned for updates, tips, and more.</p>
+                <p>Welcome to our educational blog! Here, we share insights, tips, and knowledge about technology, science, mathematics, and more. Our goal is to make learning fun and accessible for everyone.</p>
                 <h2>Categories</h2>
                 <ul>
                     <li><a href="#">Tech</a></li>
                     <li><a href="#">Science</a></li>
                     <li><a href="#">Mathematics</a></li>
                     <li><a href="#">Programming</a></li>
+                    <li><a href="#">AI & Machine Learning</a></li>
                 </ul>
             </aside>
         </div>
