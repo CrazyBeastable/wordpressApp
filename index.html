@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Educational Blog</title>
+    <style>
+        /* Basic Styles */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            width: 80%;
+            margin: 0 auto;
+        }
+
+        header {
+            background-color: #333;
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+        }
+
+        header h1 {
+            margin: 0;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        nav ul li {
+            display: inline;
+            margin-right: 15px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+        }
+
+        main {
+            display: flex;
+            margin-top: 30px;
+        }
+
+        .content {
+            width: 70%;
+            margin-right: 30px;
+        }
+
+        .sidebar {
+            width: 30%;
+        }
+
+        h2 {
+            color: #333;
+        }
+
+        .post {
+            background-color: white;
+            padding: 15px;
+            margin-bottom: 20px;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .post h3 a {
+            text-decoration: none;
+            color: #333;
+        }
+
+        .post-meta {
+            font-size: 0.9em;
+            color: #777;
+        }
+
+        footer {
+            background-color: #333;
+            color: white;
+            padding: 10px 0;
+            text-align: center;
+            margin-top: 40px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <h1>Educational Blog</h1>
+            <nav>
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content Section -->
+    <main>
+        <div class="container">
+            <div class="content">
+                <h2>Latest Posts</h2>
+
+                <!-- Loop through WordPress posts -->
+                <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
+                    <article class="post">
+                        <h3><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
+                        <p class="post-meta">Posted on <?php the_date(); ?> by <?php the_author(); ?></p>
+                        <p><?php the_excerpt(); ?></p>
+                        <a href="<?php the_permalink(); ?>">Read more</a>
+                    </article>
+                <?php endwhile; else: ?>
+                    <p>No posts found.</p>
+                <?php endif; ?>
+            </div>
+
+            <!-- Sidebar -->
+            <aside class="sidebar">
+                <h2>About</h2>
+                <p>Welcome to our educational blog. Stay tuned for updates, tips, and more.</p>
+                <h2>Categories</h2>
+                <ul>
+                    <li><a href="#">Tech</a></li>
+                    <li><a href="#">Science</a></li>
+                    <li><a href="#">Mathematics</a></li>
+                    <li><a href="#">Programming</a></li>
+                </ul>
+            </aside>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Educational Blog. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>
